@@ -69,6 +69,7 @@ def get_api_answer(timestamp):
         )
     except Exception as error:
         logger.error(f'Сбой при запросе к эндпоинту. {error}')
+        raise ConnectionError('Нет ответа от API.')
     else:
         if response.status_code == HTTPStatus.OK:
             logger.debug('Эндпоинт доступен')
@@ -97,19 +98,18 @@ def check_response(response):
 def parse_status(homework):
     """Extracts informations about particular homework status."""
     if 'status' not in homework:
-        logger.error(homework)
-        raise NoStatusException('Домашняя работа не содержит статуса.')
+        logger.error(f'Домашняя работа {homework} не содержит статус.')
+        raise NoStatusException('Домашняя работа не содержит статус.')
     if 'homework_name' not in homework:
-        logger.error(homework)
+        logger.error(f'Домашняя работа {homework} не содержит названия.')
         raise NoNameException('Домашняя работа не содержит названия.')
     homework_name = homework['homework_name']
     homework_status = homework['status']
     if homework_status not in HOMEWORK_VERDICTS:
         logger.error('Неожиданный статус домашней работы')
         raise UnknownStatusError('Недокументированный статус домашней работы.')
-    else:
-        verdict = HOMEWORK_VERDICTS[homework_status]
-        return f'Изменился статус проверки работы "{homework_name}". {verdict}'
+    verdict = HOMEWORK_VERDICTS[homework_status]
+    return f'Изменился статус проверки работы "{homework_name}". {verdict}'
 
 
 def main():

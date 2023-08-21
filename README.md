@@ -1,5 +1,7 @@
 # Homework bot
-_Телеграм-бот для проверки статуса домашней работы_
+_Телеграм-бот для проверки статуса домашней работы_  
+
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white) <br>
 
 Это учебный проект, написанный в процессе обучения в "Яндекс Практикум".  
 Бот проверяет статус сданного на проверку проекта и отправляет сообщения в Телеграм при изменении статуса.

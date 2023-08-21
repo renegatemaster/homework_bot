@@ -1,2 +1,23 @@
-# homework_bot
-python telegram bot
+# Homework bot
+_Телеграм-бот для проверки статуса домашней работы_
+
+Это учебный проект, написанный в процессе обучения в "Яндекс Практикум".  
+Бот проверяет статус сданного на проверку проекта и отправляет сообщения в Телеграм при изменении статуса.
+В этом проекте я оттачивал знание языка Python, его встроенных и сторонних библиотек.
+
+### Как использовать?
+
+Клонируйте репозиторий на свой компьютер:
+```bash
+git clone git@github.com:renegatemaster/homework_bot.git
+```
+
+Создайте виртуальное окружение, активируйте его и установите зависимости:
+```bash
+python3.9 -m venv venv
+source venv/bin/activate  # Для Linux и MacOS
+source venv/scripts/activate  # Для Windows
+pip install -r requirements.txt
+```
+
+Запустите 
